@@ -1,0 +1,21 @@
+<ActionBar title="Noticias" class="action-bar">
+</ActionBar>
+
+<ScrollView orientation="vertical">
+  <StackLayout orientation="vertical">
+    <CardView *ngFor="let noticia of noticias" class="card-noticia" margin="10" elevation="10" radius="1" >
+      <GridLayout columns="auto, *" rows="auto, auto, auto">
+
+        <label [text]="noticia.letra" margin="5" class="avatar" col="0" row="0"></label>
+        <label [text]="noticia.data" margin="5" class="data" col="1" row="0"></label>
+
+        <Image [src]="noticia.imagem" stretch="aspectFit" colSpan="2" col="0" row="1"></Image>
+
+        <Label horizontalAlignment="left" class="titulo" margin="10" [text]="noticia.titulo" colSpan="2" row="2" textWrap="true" col="0"></Label>
+
+      </GridLayout>
+    </CardView>
+
+    <button text="Carregar mais" class="btn btn-primary" (tap)="carregarMais()"></button>
+  </StackLayout>
+</ScrollView>
